@@ -18,7 +18,7 @@ class RecordingFixedPositionDialog : DialogFragment(){
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val builder = AlertDialog.Builder(activity)
-        val inflater = activity!!.layoutInflater
+        val inflater = requireActivity().layoutInflater
 
         val view = inflater.inflate(R.layout.recording_fixed_position_dialog, null)
         val xEditText = view.findViewById<EditText>(R.id.x_value_edittext)
@@ -27,7 +27,7 @@ class RecordingFixedPositionDialog : DialogFragment(){
         val directionSpinner = view.findViewById<Spinner>(R.id.directions_spinner)
         val timePeriodEditText = view.findViewById<EditText>(R.id.time_period_edittext)
         val directions = arrayOf(Directions.N, Directions.E, Directions.S, Directions.W)
-        val spinnerAdapter = ArrayAdapter(activity!!.applicationContext, android.R.layout.simple_spinner_dropdown_item, directions)
+        val spinnerAdapter = ArrayAdapter(requireActivity().applicationContext, android.R.layout.simple_spinner_dropdown_item, directions)
         directionSpinner.adapter = spinnerAdapter
 
         builder.setView(view)
@@ -54,15 +54,7 @@ class RecordingFixedPositionDialog : DialogFragment(){
         return builder.create()
     }
 
-    override fun onAttach(context: Context?) {
-        super.onAttach(context)
 
-        try{
-            recordingFixedPositionDialogListener = context as RecordingFixedPositionDialogListener
-        } catch (c: ClassCastException){
-            throw ClassCastException("${context.toString()} must implement RecordingFixedPositionDialogListener.")
-        }
-    }
 
     private fun isValid(x: String, y: String, z: String, direction: String, timePeriod: Long): Boolean{
         return  x.isNotBlank()

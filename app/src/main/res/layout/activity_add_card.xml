@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddCard">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:background="#ffffff"
+        app:layout_constraintTop_toBottomOf="@+id/card_register">
+
+        <ImageView
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:layout_centerInParent="true"
+            app:srcCompat="@drawable/card" />
+
+        <TextView
+            android:id="@+id/card_num_view"
+            android:layout_width="345dp"
+            android:layout_height="58dp"
+            android:layout_alignLeft="@+id/card"
+
+            android:layout_alignTop="@+id/card"
+            android:layout_alignRight="@+id/card"
+            android:layout_alignBottom="@+id/card"
+
+
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="149dp"
+            android:layout_marginRight="31dp"
+            android:layout_marginBottom="62dp"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:text="00000000000000000000"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            android:typeface="sans" />
+
+        <TextView
+            android:id="@+id/card_exp_date_view"
+            android:layout_width="206dp"
+            android:layout_height="41dp"
+            android:layout_alignLeft="@+id/card"
+
+            android:layout_alignTop="@+id/card"
+            android:layout_alignRight="@+id/card"
+            android:layout_alignBottom="@+id/card"
+
+
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="170dp"
+            android:layout_marginTop="197dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginBottom="32dp"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:text="00/00"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            android:typeface="sans" />
+
+
+        <TextView
+            android:id="@+id/card_name_view"
+            android:layout_width="127dp"
+            android:layout_height="26dp"
+            android:layout_alignLeft="@+id/card"
+
+            android:layout_alignTop="@+id/card"
+            android:layout_alignRight="@+id/card"
+            android:layout_alignBottom="@+id/card"
+
+
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="38dp"
+            android:layout_marginTop="221dp"
+            android:layout_marginRight="246dp"
+            android:layout_marginBottom="23dp"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:text="홍길동"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            android:typeface="sans" />
+
+        <TextView
+            android:id="@+id/card_cvd_view"
+            android:layout_width="127dp"
+            android:layout_height="26dp"
+            android:layout_alignLeft="@+id/card"
+
+            android:layout_alignTop="@+id/card"
+            android:layout_alignRight="@+id/card"
+            android:layout_alignBottom="@+id/card"
+
+
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="272dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="196dp"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:text="000"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            android:typeface="sans" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/card_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="카드 등록"
+        android:textSize="30dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/owner_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="소유자이름"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout3"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <EditText
+        android:id="@+id/card_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="카드번호"
+        app:layout_constraintTop_toBottomOf="@+id/owner_name"
+        tools:layout_editor_absoluteX="29dp" />
+
+    <EditText
+        android:id="@+id/exp_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="만료기한(월/년)"
+        app:layout_constraintTop_toBottomOf="@+id/card_num"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <EditText
+        android:id="@+id/cvd_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="뒷면 보안코드 3자리"
+        app:layout_constraintTop_toBottomOf="@+id/exp_date"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <EditText
+        android:id="@+id/card_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="비밀번호 앞 2자리"
+        app:layout_constraintTop_toBottomOf="@+id/cvd_num"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/card_password"
+        android:text="등록하기"
+        android:textSize="25dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

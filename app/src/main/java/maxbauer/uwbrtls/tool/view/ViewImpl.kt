@@ -8,6 +8,9 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.view.*
 import maxbauer.uwbrtls.tool.BuildConfig
 import maxbauer.uwbrtls.tool.R
@@ -22,6 +25,7 @@ class ViewImpl : AppCompatActivity(), MainScreenContract.View,
     RecordingFixedPositionDialogListener {
 
     private lateinit var presenter: MainScreenContract.Presenter
+    private lateinit var database: DatabaseReference
 
     private var recordingDetailsData: InputData? = null
 
@@ -114,9 +118,16 @@ class ViewImpl : AppCompatActivity(), MainScreenContract.View,
 
     override fun showFilteredPosition(filteredLocationData: LocationData) {
         this.runOnUiThread {
-            filtered_x_position.text = "Filter X: ${StringUtil.inEuropeanNotation(filteredLocationData.xPos)} m"
-            filtered_y_position.text = "Filter Y: ${StringUtil.inEuropeanNotation(filteredLocationData.yPos)} m"
-            filtered_z_position.text = "Filter Z: ${StringUtil.inEuropeanNotation(filteredLocationData.zPos)} m"
+            database = Firebase.database.reference
+
+            filtered_x_position.text = " ${StringUtil.inEuropeanNotation(filteredLocationData.xPos)} "
+            filtered_y_position.text = "${StringUtil.inEuropeanNotation(filteredLocationData.yPos)} "
+            filtered_z_position.text = "${StringUtil.inEuropeanNotation(filteredLocationData.zPos)} "
+
+            database.child("position_x").setValue(StringUtil.inEuropeanNotation(filteredLocationData.xPos))
+            database.child("position_y").setValue(StringUtil.inEuropeanNotation(filteredLocationData.yPos))
+//            database.child("position").child("z").setValue(filtered_z_position.text)
+
         }
     }
 

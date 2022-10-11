@@ -2,25 +2,76 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="maxbauer.uwbrtls.tool">
 
+
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
+
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:icon="@drawable/key_icon"
+        android:label="ANYKEY"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="maxbauer.uwbrtls.tool.view.ViewImpl">
+        <activity android:name=".Intro"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AddLicense"
+            android:exported="false" />
+        <activity
+            android:name=".login"
+            android:exported="false" />
+        <activity
+            android:name=".CreateKey"
+            android:exported="false" />
+        <activity
+            android:name=".VehicleManager"
+            android:exported="false" />
+        <activity
+            android:name=".Home"
+            android:exported="false" />
+
+
+        <activity
+            android:name=".ResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SeatAdjust"
+            android:exported="false" />
+        <activity
+            android:name=".AddCard"
+            android:exported="false" />
+        <activity
+            android:name=".AddVehicle"
+            android:exported="false" />
+        <activity
+            android:name=".SignUp"
+            android:exported="false" />
+        <activity
+            android:name=".SettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Mainpage"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity android:name="maxbauer.uwbrtls.tool.view.ViewImpl"/>
+
+
+
     </application>
+
+
 
 </manifest>

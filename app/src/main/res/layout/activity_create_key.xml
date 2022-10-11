@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateKey">
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/date_rental_text"
+        android:layout_marginTop="82dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="대여 날짜"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/button_rental_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/date_rental_text"
+        android:layout_toEndOf="@+id/date_rental_text"
+        android:layout_toRightOf="@+id/date_rental_text"
+        android:text="SELECT DATE" />
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/time_rental_text"
+        android:layout_below="@+id/date_rental_text"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="대여 시각"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SELECT TIME"
+        android:id="@+id/button_rental_time"
+        android:layout_below="@+id/button_rental_date"
+        android:layout_alignLeft="@+id/button_rental_date"
+        android:layout_alignStart="@+id/button_rental_date" />
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/date_return_text"
+        android:layout_marginTop="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="반납 날짜"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SELECT DATE"
+        android:id="@+id/button_return_date"
+        android:layout_alignBottom="@+id/date_return_text"
+        android:layout_toRightOf="@+id/date_return_text"
+        android:layout_toEndOf="@+id/date_return_text" />
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/time_return_text"
+        android:layout_below="@+id/date_return_text"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="반납 시각"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SELECT TIME"
+        android:id="@+id/button_return_time"
+        android:layout_below="@+id/button_return_date"
+        android:layout_alignLeft="@+id/button_return_date"
+        android:layout_alignStart="@+id/button_return_date" />
+
+    <TextView
+        android:id="@+id/select_vehicle_text"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="300dp"
+        android:text="차량 선택"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/button_select_vehicle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/select_vehicle_text"
+        android:layout_toEndOf="@+id/select_vehicle_text"
+        android:layout_toRightOf="@+id/select_vehicle_text"
+        android:text="SELECT VEHICLE" />
+
+    <Button
+        android:id="@+id/button_create_key"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:layout_below="@+id/button_return_date"
+        android:layout_alignStart="@+id/button_return_date"
+        android:layout_alignLeft="@+id/button_return_date"
+        android:layout_marginStart="-200dp"
+        android:layout_marginLeft="-200dp"
+        android:layout_marginTop="152dp"
+        android:text="키 발급" />
+
+</RelativeLayout>
